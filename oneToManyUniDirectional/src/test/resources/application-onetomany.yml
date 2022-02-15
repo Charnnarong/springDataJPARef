@@ -1,0 +1,30 @@
+
+spring:
+  sql:
+    init:
+      schema-locations:
+        - classpath:dev/schema.sql
+      data-locations:
+        - classpath:dev/data.sql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.format_sql: true
+
+  datasource:
+    username: sa
+    password:
+    url: jdbc:h2:mem:jpademo;
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
